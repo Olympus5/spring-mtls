@@ -1,0 +1,27 @@
+[ req ]
+default_bits       = 4096
+default_keyfile    = server.key
+default_md         = sha256
+encrypt_key        = no
+utf8               = yes
+prompt             = no
+distinguished_name = server_distinguished_name
+req_extensions     = server_req_extensions
+
+[ server_distinguished_name ]
+C                = FR
+ST               = Bretagne
+L                = Rennes
+O                = Olympus5
+OU               = Olympus5 Server
+CN               = server.olympus5.bzh
+emailAddress     = server@olympus5.bzh
+
+[ server_req_extensions ]
+basicConstraints = CA:FALSE
+subjectKeyIdentifier = hash
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = server.olympus5.bzh
+DNS.2 = www.server.olympus5.bzh
