@@ -2,7 +2,7 @@
 default_bits         = 4096
 default_keyfile      = server.olympus5.bzh.key
 default_md           = sha256
-encrypt_key          = no
+encrypt_key          = yes
 utf8                 = yes
 prompt               = no
 distinguished_name   = server_distinguished_name
