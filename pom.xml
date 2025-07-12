@@ -76,5 +76,6 @@
 
   <modules>
     <module>mtls-server</module>
+    <module>mtls-client</module>
   </modules>
 </project>
