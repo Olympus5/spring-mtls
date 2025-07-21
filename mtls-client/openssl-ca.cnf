@@ -1,0 +1,54 @@
+[ ca ]
+default_ca             = olympus5_ca
+
+[ olympus5_ca ]
+serial                 = ./serial
+database               = ./index.txt
+new_certs_dir          = ./certs
+certificate            = ./ca.olympus5.org.crt
+private_key            = ./ca.olympus5.org.key
+
+default_md             = sha256
+default_days           = 365
+default_crl_days       = 30
+x509_extensions        = ca_extensions
+policy                 = ca_policy
+
+copy_extensions        = copy
+
+[ req ]
+default_bits           = 2048
+default_keyfile        = ca.olympus5.org.key
+default_md             = sha256
+encrypt_key            = no
+utf8                   = yes
+prompt                 = no
+distinguished_name     = ca_distinguished_name
+x509_extensions        = ca_extensions
+
+[ ca_distinguished_name ]
+C                      = FR
+ST                     = Bretagne
+L                      = Rennes
+O                      = Olympus5
+OU                     = Olympus5 Client CA
+CN                     = ca.olympus5.org
+emailAddress           = ca@olympus5.org
+
+[ ca_extensions ]
+basicConstraints       = CA:TRUE
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid:always,issuer
+keyUsage               = keyCertSign, cRLSign
+
+[ signing_req ]
+basicConstraints       = CA:FALSE
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid,issuer
+
+[ ca_policy ]
+countryName            = match
+stateOrProvinceName    = supplied
+organizationName       = supplied
+commonName             = supplied
+organizationalUnitName = optional

@@ -1,0 +1,28 @@
+[ req ]
+default_bits         = 2048
+default_keyfile      = client.olympus5.org.key
+default_md           = sha256
+encrypt_key          = yes
+utf8                 = yes
+prompt               = no
+output_password      = azerty
+distinguished_name   = client_distinguished_name
+req_extensions       = client_req_extensions
+
+[ client_distinguished_name ]
+C                    = FR
+ST                   = Bretagne
+L                    = Rennes
+O                    = Olympus5
+OU                   = Olympus5 Client
+CN                   = client.olympus5.org
+emailAddress         = client@olympus5.org
+
+[ client_req_extensions ]
+basicConstraints     = CA:FALSE
+subjectKeyIdentifier = hash
+subjectAltName       = @alt_names
+
+[ alt_names ]
+DNS.1                = client.olympus5.org
+DNS.2                = www.client.olympus5.org
