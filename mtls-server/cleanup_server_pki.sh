@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# This script cleans up the server PKI for mTLS.
 set -e
 
 rm -f ca.olympus5.bzh.crt \

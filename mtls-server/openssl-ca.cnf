@@ -41,6 +41,11 @@ subjectKeyIdentifier   = hash
 authorityKeyIdentifier = keyid:always,issuer
 keyUsage               = keyCertSign, cRLSign
 
+[ signing_req ]
+basicConstraints       = CA:FALSE
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid,issuer
+
 [ ca_policy ]
 countryName            = match
 stateOrProvinceName    = supplied
