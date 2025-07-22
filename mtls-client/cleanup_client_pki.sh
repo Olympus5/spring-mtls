@@ -12,6 +12,7 @@ rm -f ca.olympus5.org.crt \
   index.txt \
   index.txt.attr \
   certs/*.pem \
-  src/main/resources/client.jks
+  src/main/resources/client.jks \
+  ../mtls-server/src/main/resources/server-trustore.jks
 mv serial.old serial
 mv index.txt.old index.txt
